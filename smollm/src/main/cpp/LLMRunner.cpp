@@ -211,7 +211,7 @@ bool LLMRunner::generate(const std::vector<llama_token>& tokens, TokenCallback c
     if (m_params.storeChats && !m_accumulated_response.empty()) {
         add_chat_message("assistant", m_accumulated_response);
     }
-
+    m_accumulated_response.clear();
     return true;
 }
 
